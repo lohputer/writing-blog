@@ -173,7 +173,6 @@ def login():
     return jsonify({ 'token': token.decode('UTF-8') })
 
 @app.route('/publish', methods=['POST'])
-@token_required()
 def publish():
     data = request.get_json()
     writing = Writing(title=data['title'], text=data['text'])
